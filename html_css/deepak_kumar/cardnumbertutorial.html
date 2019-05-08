@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script type="text/javascript">
+    function validateCardNo()
+    {
+        var abc=document.getElementById("dmo");
+        var regexnumber=/^[0-9]/;
+        if(abc.value.match(regexnumber))
+        {
+        switch(abc.value.length)
+        {
+            case 4:
+                var a=abc.value+"-";
+                abc.value=a;
+                break;
+            
+            case 9:
+                var b=abc.value+"-";
+                abc.value=b;
+                break;
+            
+            case 14:
+                var c=abc.value+"-";
+                abc.value=c;
+                break;
+            
+            case 20:
+            
+                abc.value=abc.value.substring(0,19);
+                alert("Number should not greater than 16 characters whithout -");
+                break;
+        }
+        }
+        else{
+            alert("only numbers allowed");
+        }
+    }
+    </script>
+</head>
+<body>
+    <input type="text" id="dmo" placeholder="enter your card no" oninput="validateCardNo()">
+</body>
+</html>

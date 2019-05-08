@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script type="text/javascript">
+    function restrict()
+    {
+        var input=document.getElementById("name");
+        var regex=/^[0-9]+$/;
+        if(input.value.match(regex)){
+            document.getElementById("abc").innerHTML="you have enter correct value";
+        }
+        else{
+            alert("Please enter only numbers");
+            input.value=null;
+            document.getElementById("abc").innerHTML="incorrect value";
+        }
+    }
+    function checkchar(){
+        var input1=document.getElementById("number");
+        var regex=/^[0-9]+$/;
+        if(input1.value.match(regex)){
+            document.getElementById("ab").innerHTML="Incorrect value";
+            alert("numbers not allowed.");
+            input1.value=null;
+        }
+        else{
+            document.getElementById("ab").innerHTML="correct value";
+        }
+    }
+    function checkSpchar(){
+        var input1=document.getElementById("symbol");
+        var regex=/[-\/\\^$*+?.()|[\]{}]/g;
+        if(input1.value.match(regex)){
+            document.getElementById("a").innerHTML="Incorrect value";
+            alert("Special characters not allowed.");
+            input1.value=null;
+        }
+        else{
+            document.getElementById("a").innerHTML="correct value";
+        }
+    }
+    </script>
+</head>
+<body>
+    <p id="abc">Enter restricted text</p>
+    <input type="text" id="name" oninput="restrict()">
+    <p id="ab">Enter restricted text</p>
+    <input type="text" id="number" oninput="checkchar()">
+    <p id="a">Enter restricted text</p>
+    <input type="text" id="symbol" oninput="checkSpchar()">
+</body>
+</html>

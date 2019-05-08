@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script type="text/javascript">
+        function validate()
+        {
+            var user=document.getElementById("username").value;
+            if(user!=null && user.length>0 && user!=undefined)
+            {
+                document.getElementById("username").style.border="2px solid green";
+            }
+            else
+            {
+                document.getElementById("username").style.border="2px solid red";
+            }
+            var pass=document.getElementById("pass").value;
+            var expression=/^[0-9a-zA-Z]+$/;
+            if(pass!=null && pass.length >=8 && pass!=undefined && pass.match(expression))
+            {
+                document.getElementById("pass").style.border="2px solid green";
+            }
+            else{
+                document.getElementById("pass").style.border="2px solid red";
+            }
+            var email=document.getElementById("email").value;
+            var emailExpres=/[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,4}/igm;
+            if(email!=null && email.length>0 && email!=undefined && email.match(emailExpres))
+            {
+                document.getElementById("email").style.border="2px solid green";
+            }
+            else
+            {
+                document.getElementById("email").style.border="2px solid red";
+            }
+        }
+    </script>
+</head>
+<body>
+    <div style="text-align:center;height: 300px;width: 400px; top:100px;left:200px;position: relative;">
+<table border="2px solid green" style="height:100%;width:100%;">
+    <tr>
+        <td>
+            <input type="text" id="username" placeholder="enter username">
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type="password" id="pass" placeholder="enter password">
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type="email" id="email" placeholder="enter email">
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type="button" value="submit" onclick="validate()">
+        </td>
+    </tr>
+</table>
+    </div>
+</body>
+</html>
